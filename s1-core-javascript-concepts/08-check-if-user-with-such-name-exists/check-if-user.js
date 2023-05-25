@@ -18,4 +18,17 @@ const users = [
   },
 ]
 
-//
+// const checkIfItExists = (arr, nameToCheck) => {
+//   for (const obj of arr) {
+//     if (obj.name === nameToCheck) {
+//       return true
+//     }
+//   }
+
+//   return false
+// }
+
+const checkIfItExists = (arr, nameToCheck) => arr.some((el) => el.name === nameToCheck)
+
+console.log(checkIfItExists(users, 'John'))
+console.log(checkIfItExists(users, 'Sam'))

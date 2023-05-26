@@ -16,7 +16,7 @@ const range = (start, end) => {
 // console.log(range(1, 50))
 
 const rangeAdvanced = (start, end) => {
-  return [...Array(end).keys()].map((el) => el + start)
+  return [...Array(end + 1 - start).keys()].map((el) => el + start)
 }
 
 console.log(rangeAdvanced(1, 50))

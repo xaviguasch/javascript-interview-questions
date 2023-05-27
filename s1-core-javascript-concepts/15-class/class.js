@@ -29,9 +29,28 @@ class Employee {
 
 const michaelEmployee = new Employee('45e', 'Michael')
 
-console.log(michaelEmployee)
-michaelEmployee.setSalary(5000)
-console.log(michaelEmployee.getSalary())
-console.log(michaelEmployee.getName())
+// console.log(michaelEmployee)
+// michaelEmployee.setSalary(5000)
+// console.log(michaelEmployee.getSalary())
+// console.log(michaelEmployee.getName())
 
 // Design a class for manager which is employee and can have department property
+
+class Manager extends Employee {
+  constructor(id, name) {
+    super(id, name)
+  }
+
+  setDepartment(name) {
+    this.department = name
+  }
+
+  getDepartment() {
+    return this.department
+  }
+}
+
+const manager = new Manager(2, 'John')
+manager.setDepartment('Development')
+console.log(manager)
+console.log(manager.getDepartment())

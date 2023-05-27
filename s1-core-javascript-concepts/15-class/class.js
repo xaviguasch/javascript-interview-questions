@@ -37,10 +37,6 @@ const michaelEmployee = new Employee('45e', 'Michael')
 // Design a class for manager which is employee and can have department property
 
 class Manager extends Employee {
-  constructor(id, name) {
-    super(id, name)
-  }
-
   setDepartment(name) {
     this.department = name
   }

@@ -27,7 +27,27 @@ Employee.prototype.getSalary = function () {
 
 const michaelEmployee = new Employee('45e', 'Michael')
 
-console.log(michaelEmployee)
-michaelEmployee.setSalary(5000)
-console.log(michaelEmployee.getSalary())
-console.log(michaelEmployee.getName())
+// console.log(michaelEmployee)
+// michaelEmployee.setSalary(5000)
+// console.log(michaelEmployee.getSalary())
+// console.log(michaelEmployee.getName())
+
+var Manager = function (params) {
+  Employee.apply(this, arguments)
+}
+
+Manager.prototype = Object.create(Employee.prototype)
+Manager.prototype.constructor = Manager
+
+Manager.prototype.setDepartment = function (name) {
+  this.department = name
+}
+
+Manager.prototype.getDepartment = function () {
+  return this.department
+}
+
+const manager = new Manager(2, 'John')
+manager.setDepartment('Development')
+console.log(manager)
+console.log(manager.getDepartment())
